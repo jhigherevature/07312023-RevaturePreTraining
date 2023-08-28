@@ -10,3 +10,12 @@ CREATE TABLE training731.employees (
 	emp_title VARCHAR(50),
 	emp_salary DECIMAL
 );
+
+ALTER TABLE training731.employees ADD PRIMARY KEY (emp_id);
+
+
+CREATE TABLE training731.checkerTable (
+	id_val INT PRIMARY KEY,
+	str_name VARCHAR
+);
+

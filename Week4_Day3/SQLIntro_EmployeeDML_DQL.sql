@@ -59,3 +59,4 @@ SELECT emp_name AS name, emp_title AS title, emp_salary AS salary FROM training7
 -- We will discuss joins and set operations in more detail later...here is a small preview: 
 --SELECT a.emp_id AS id FROM training731.animals AS a
 --RIGHT JOIN training731.vet AS b ON a.vet_id = b.vet_id;
+

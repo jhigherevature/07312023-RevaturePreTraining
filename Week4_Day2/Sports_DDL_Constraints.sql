@@ -5,6 +5,8 @@ CREATE TABLE training731.state (
 	state_name VARCHAR(100) UNIQUE NOT NULL
 );
 
+INSERT INTO training731.state VALUES (DEFAULT, 'Colorado');
+
 CREATE TABLE training731.sports (
 	sport_id SERIAL PRIMARY KEY,
 	sport_name VARCHAR(100) UNIQUE
