@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>javalin-intro</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Javalin Intro Project</name>
+  <properties>
+	  <maven.compiler.source>11</maven.compiler.source>
+	  <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+	<dependencies>
+	
+		<!-- This dependency is to enable Javalin in our application -->
+		<!-- https://mvnrepository.com/artifact/io.javalin/javalin -->
+		<dependency>
+		    <groupId>io.javalin</groupId>
+		    <artifactId>javalin</artifactId>
+		    <version>5.6.1</version>
+		</dependency>
+		
+		<!-- This dependency is to allow Javalin access to a simple logging framework (by default Javalin wants some basic configuration for logging) -->
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		    <version>2.0.7</version>
+		</dependency>
+		
+		<!-- This dependency is used for simple data binding functionality (reading JSON content into Java Objects) -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.0-rc1</version>
+        </dependency>
+        
+	</dependencies>  
+</project>
