@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds"> 
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-4relative %d{HH:mm:ss.SSS} [%thread] %-5level %logger{5}.%method - %message %n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 'property' : allows you to set property names which can be referenced in appenders -->	
+	<property name="LOG_FILE" value="logs/log-file.log" />
+	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_FILE}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- fileNamePattern is required. It sets the file name as well as the rollover period -->
+			<!-- Monthly : <fileNamePattern>${LOG_FILE}.%d{yyyy-MM}.log </fileNamePattern>-->
+			<fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
+			
+			<!-- 'maxHistory' : Sets the maximum number of files to keep before deleting older ones. 
+				Essentially, this adopts the rolling period as well (30 days, months etc...) -->
+			<maxHistory>30</maxHistory>
+		
+			<!-- 'totalSizeCap' : Sets the maximum amount of memory space allocated for files.
+				KB | MB | GB -->
+			<totalSizeCap>2GB</totalSizeCap>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MMM-dd | HH:mm:ss.SSS} [%thread] %-5level %logger{50}.%method - %message %n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 'name' : name of package within project -->
+	<logger name="com.service" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
