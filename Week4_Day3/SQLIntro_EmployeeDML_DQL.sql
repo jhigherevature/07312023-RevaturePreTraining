@@ -11,7 +11,6 @@ INSERT INTO training731.employees VALUES
 	(1008,'Quincy','Developer',86000.00),
 	(1009,'Leslie','Tester',151000.00),
 	(1010,'Bill','Developer',114000.00);
-	
 
 INSERT INTO training731.employees VALUES (1011,'Joe',NULL,100000.00);
 

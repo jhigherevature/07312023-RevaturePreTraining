@@ -1,3 +1,14 @@
+
+/*
+ * DDL allows us to create any number of entities (except for records) which would exist
+ * in our database.
+ * 
+ * CREATE <ENTITY_TYPE> <ENTITY_NAME> [()];
+ * CREATE SCHEMA myNewSchema;
+ * CREATE TABLE myNewTable ( columnName columnDatatype, .... );
+ * CREATE USER myNewUser WITH PASSWORD myPasswordValue
+ */
+
 CREATE TABLE training731.state (
 	-- SERIAL in PostgreSQL is equivalent to 'AUTO_INCREMENT' in MySQL
 	-- This will automatically create a new value for the PK if I don't declare it when inserting data
@@ -27,5 +38,3 @@ CREATE TABLE training731.players (
 	player_salary DECIMAL UNIQUE,
 	draft_date DATE UNIQUE
 );
-
-DROP TABLE training731.players;

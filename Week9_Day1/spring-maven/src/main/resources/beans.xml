@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+       
+    <!-- This element tells Spring that we have Annotation based configured beans & where to search for them (anywhere in 'com.revature...' -->
+    <context:component-scan base-package="com.revature" />
+	
+	<bean id="animal1" class="com.revature.animals.Animal">
+		<!-- Additional Configuration will go here... -->
+		<constructor-arg index="0" value="Dog"/>
+		<constructor-arg index="1" value="Fido"/>
+		<constructor-arg index="2" value="4"/>
+	</bean>
+	
+	<bean id="animal2" class="com.revature.animals.Animal">
+		<!-- Additional Configuration will go here... -->
+		<property name="species" value="Cat" />
+		<property name="name" value="Me. Whiskers" />
+		<property name="age" value="6" />
+	</bean>
+</beans>
